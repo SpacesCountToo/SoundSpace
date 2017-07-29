@@ -458,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501337965774</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there">
+      <created>1501337986844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1501337986844</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
