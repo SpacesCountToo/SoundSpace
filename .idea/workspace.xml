@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="">
+    <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -465,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501337986844</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there">
+      <created>1501337993351</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1501337993351</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
