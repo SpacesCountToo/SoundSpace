@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testfile.fits" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/SoundSpace.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/a_imgSplitter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/b_bc_colSoundGen.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/b_colSplitter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/c_toneGen.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/d_hrtfGen.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/e_sequencer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soundSpace_pipestep.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -467,6 +451,14 @@
       <option name="presentableId" value="Default" />
       <updated>1501261410064</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there">
+      <created>1501337965774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1501337965774</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -498,6 +490,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
