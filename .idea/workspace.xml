@@ -2,26 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e100a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e105a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e110a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e115a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e120a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e125a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e130a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e135a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e140a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e145a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e150a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e155a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e160a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e165a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e170a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e175a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e180a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e185a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e190a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e195a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e200a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e205a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e210a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e215a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e220a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e225a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e230a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e235a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e240a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e245a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e250a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e255a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e260a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e265a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e270a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e275a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e280a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e285a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e290a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e295a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e300a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e305a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e310a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e315a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e320a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e325a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e330a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e335a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e340a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e345a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e350a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e355a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e000a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e005a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e010a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e015a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e020a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e025a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e030a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/R0e035a.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -625,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501913397233</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit 2.2: BETA READY, slow add: hrtfs">
+      <created>1501913455384</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1501913455384</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
