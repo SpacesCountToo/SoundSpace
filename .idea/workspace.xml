@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e035a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e040a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e045a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e050a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e055a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e060a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e065a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e070a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e075a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e080a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e085a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e090a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e095a.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -604,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501913303177</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit 2.2: BETA READY, slow add: hrtfs">
+      <created>1501913392144</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1501913392144</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
