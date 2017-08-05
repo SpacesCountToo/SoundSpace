@@ -1,5 +1,5 @@
 # Imports
-import pyfits as fits
+from astropy.io import fits
 import numpy as np
 from math import floor
 
@@ -14,7 +14,7 @@ class Column:
         self.col_index = 0
         self.col_data = np.empty
         self.resolution = int(floor(self.size/36))
-        self.black = np.median(self.data) * 1.025
+        self.black = np.percentile(self.data, 95)
 
     def columnSplitter(self):
         with fits.open(self.name) as x:
