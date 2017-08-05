@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e000a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e005a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e010a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e015a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e020a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e025a.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e030a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e035a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e040a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e045a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e050a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e055a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e060a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e065a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e070a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e075a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e080a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e085a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e090a.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hrtf/L0e095a.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -591,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501913164941</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit 2.2: BETA READY, slow add: hrtfs">
+      <created>1501913303177</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1501913303177</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -639,7 +652,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit 1: WHERE DOES IT ALL GO&#10;Halfway there" />
     <MESSAGE value="Commit 2.1: BETA READY, slow add: dings and clicks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 2.1: BETA READY, slow add: dings and clicks" />
+    <MESSAGE value="Commit 2.2: BETA READY, slow add: hrtfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 2.2: BETA READY, slow add: hrtfs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
