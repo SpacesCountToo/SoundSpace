@@ -21,7 +21,6 @@ class SineGen:
         self.click = sp.read('waves/click.wav')
         self.click = self.click[1]
         self.splash()
-        print "column %d" %  column_no
         # if np.abs(self.tsunami).max() == 0:
         #     print self.tsunami
         # else:
