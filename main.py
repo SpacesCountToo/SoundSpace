@@ -1,5 +1,4 @@
-from a_imgSplitter import Column
-from b_colSplitter import Pixel
+from img_deconstruct import Image
 from c_toneGen import SineGen
 from d_hrtfGen import Transform
 from astropy.io import fits
@@ -23,25 +22,9 @@ try:
     print 'Done. Opening %s' % filename
 except TypeError:
     sys.exit('No file found, quitting...')
-# Image -> Columns
-print 'Converting images into columns...'
-a = Column(filename)
-full = np.zeros((36, 36), np.float64)
-print 'file dimensions: %d x %d' % (len(a.data), len(a.data[0]))
-print 'new file dimensions: 36 x 36' # that's the joke
 
-# Columns -> Pixels
-print 'Extracting pixel data...'
-for columns in range(0, a.size - a.resolution, a.resolution):
-    a.columnSelect(columns)
-    b = Pixel(a.col_data, black=a.black)
-    b.resShift()
-
-    full[columns / a.resolution] = b.adjust
-
-ma = np.ma.masked_equal(full, 0.0, copy=False)
-print 'Normalizing data...'
-trim_img = full / ma.max()
+a = Image(filename)
+trim_img = a.reduction
 
 # Here comes the doubles. it'd be nice to change this into a function to cut
 # down on half the lines, but here we are with a quick hack :/
