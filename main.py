@@ -1,7 +1,5 @@
 from img_deconstruct import Image
-from c_toneGen import SineGen
-from d_hrtfGen import Transform
-from astropy.io import fits
+from sound_reconstruct import SoundSpace
 import scipy.io.wavfile as wav
 import glob
 import matplotlib.pyplot as plt
@@ -10,6 +8,17 @@ import Tkinter as tk
 import tkFileDialog as fd
 import os
 import sys
+
+# TO DO:
+# Clean this shit up.
+# [x] Image deconstruction
+# [x] Data object from deconstruction
+# [x] Sound reconstruction
+#     To revamp:
+#         Combine sound gen and sound hrtf patch to one object
+# [ ] Clean up main :)
+
+
 # Image Select
 
 root = tk.Tk()
@@ -24,59 +33,10 @@ except TypeError:
     sys.exit('No file found, quitting...')
 
 a = Image(filename)
-trim_img = a.reduction
+fast = SoundSpace(a.reduction, 1.0)
+slow = SoundSpace(a.reduction, 3.0)
 
-# Here comes the doubles. it'd be nice to change this into a function to cut
-# down on half the lines, but here we are with a quick hack :/
-
-# Pixels -> Individual Column Sounds
-
-print 'Generating sine tones...'
-fast_array = []
-slow_array = []
-for index in range(len(trim_img)):
-    if index % 9 == 0:
-        print '%0.0f%% complete' % ((index/36.)*100)
-    x = SineGen(trim_img[index], index, 1.0)
-    y = SineGen(trim_img[index], index, 3.0)
-    fast_array.append(x.tsunami)
-    slow_array.append(y.tsunami)
-print '100% complete'
-fast_array = np.asarray(fast_array)
-slow_array = np.asarray(slow_array)
-vol_cap = np.amax(np.abs(fast_array))
-print 'Normalizing summed sines...'
-fast_array /= vol_cap
-slow_array /= vol_cap
-
-print 'Writing individual column wav files...'
-for wave in range(len(fast_array)):
-    wav.write('waves/fast_%02d.wav' % wave, x.framerate, fast_array[wave])
-    wav.write('waves/slow_%02d.wav' % wave, y.framerate, slow_array[wave])
-
-print 'Applying HRTFs...'
-for wave in glob.glob('waves/fast_*'):
-    Transform(wave, 'fast')
-for wave in glob.glob('waves/slow_*'):
-    Transform(wave, 'slow')
-
-print 'Sequencing wav files...'
-fastlist = sorted(glob.glob('stereo/fast_*'))
-fastlist[::12] = ['waves/ding.wav'] * len(fastlist[::12])
-ffile = [wav.read(x)[1] for x in fastlist]
-fsplice = np.concatenate(ffile, 0)
-
-slowlist = sorted(glob.glob('stereo/slow_*'))
-slowlist[::12] = ['waves/ding.wav'] * len(slowlist[::12])
-sfile = [wav.read(x)[1] for x in slowlist]
-ssplice = np.concatenate(sfile, 0)
-
-
-with fits.open(filename) as raw_file:
-    raw_data = raw_file[0].data
-
-name = filename.split('/')[-1].split('.')[0]
-dire = 'objects/%s' % name
+dire = 'objects/%s' % a.name
 try:
     os.makedirs(dire)
 except OSError:
@@ -84,14 +44,14 @@ except OSError:
         raise
 
 fig, axes = plt.subplots(nrows=1, ncols=2)
-axes[0].imshow(np.log10(raw_data), origin='lower')
-axes[1].imshow(trim_img.T, origin='lower')
+axes[0].imshow(np.log10(a.data.T), origin='lower', cmap='RdBu')
+axes[1].imshow(a.reduction.T, origin='lower', cmap='RdYlGn')
 
 print 'Finalizing wav writes and png writes...'
 
-wav.write('%s/fast_%s.wav' % (dire, name), 44100, fsplice)
-wav.write('%s/slow_%s.wav' % (dire, name), 44100, ssplice)
-fig.savefig('%s/%s.png' % (dire, name))
+wav.write('%s/fast_%s.wav' % (dire, a.name), 44100, fast.stereo_sig.T)
+wav.write('%s/slow_%s.wav' % (dire, a.name), 44100, slow.stereo_sig.T)
+fig.savefig('%s/%s.png' % (dire, a.name))
 
 print 'Cleaning up!'
 
@@ -100,8 +60,3 @@ for x in glob.glob('stereo/*') + glob.glob('waves/*_*'):
 
 print 'Done. :)'
 plt.show()
-# print vol_cap
-# print sinearray
-# print len(sinearray)
-# plt.plot(sinearray.T)
-# plt.show()

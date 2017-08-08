@@ -4,7 +4,8 @@ import itertools as it
 
 class Image:
     def __init__(self, image):
-        self.name = image
+        self.filename = image
+        self.name = image.split('/')[-1].split('.')[0]
         self.chunk_size = 36
         with fits.open(image) as img:
             self.data = img[0].data.T
@@ -18,11 +19,9 @@ class Image:
         self.normalize()
 
     def lower_res(self):
-        print self.black
         for x, y in it.product(range(self.chunk_size),
                                range(self.chunk_size)
                                ):
-            print x, y
             self.reduction[x, y] = np.percentile(
                 self.data[x * self.x_scale : (x + 1) * self.x_scale,
                           y * self.y_scale: (y + 1) * self.y_scale],
