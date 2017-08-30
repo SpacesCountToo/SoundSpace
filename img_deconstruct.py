@@ -1,9 +1,10 @@
 from astropy.io import fits
 import numpy as np
 import itertools as it
+import os
 
 class Image:
-    def __init__(self, image):
+    def __init__(self, image, x_res=36, y_res=36, sensitivity=90):
         """
         Initiates the Image object.
 
@@ -20,6 +21,18 @@ class Image:
         image : str
             Name of the file you want to open (should be a FITS file for now)
             TO DO: Add other image format support/OpenCV support
+        x_res : int
+            Amount of pixels across the x dimension. I don't know if I'm
+            using it right, but added to attempt to allow for flexible x
+            resolution. Make sure this number is the amount of directions
+            from left to right you're able to support. (number of hrtfs you
+            want to use)
+        y_res : int
+            Amount of pixels across the y dimension. This *should* be the
+            amount of notes you want possible (range of notes) in the image.
+        sensitivity : int
+            Higher number means less light shows up, max value is 100. This
+            is the percentile of light you want to remove.
 
         (important) Properties:
         ------------
@@ -27,7 +40,7 @@ class Image:
             name of file (for some reason, object name isn't in the headers)
         .chunk_size: int
             x/y resolution of final image
-        .reduction : Numpy array, np.float32
+        .reduction : Numpy 2D array, np.float32
             reduced image @ .chunk_size x .chunk_size resolution
         .black : np.float32
             the threshold of the entire image. any number below .black is set to
@@ -39,9 +52,7 @@ class Image:
         # If the filename has a bunch of slashes in it, this essentially
         # takes the end of that filename.
         # Example: "/home/user/testimage.fits" -> "testimage"
-        self.name = image.split('/')[-1].split('.')[0]
-
-        self.chunk_size = 36
+        self.name = os.path.basename(image).split('.')[0]
 
         # Opens the image and extracts only the data. No header information
         # is transmitted.
@@ -57,21 +68,21 @@ class Image:
         # x_scale * y_scale gives you the resolution of one low-res pixel. This
         # method is pretty nice because you actually can use non-square images
         # and turn them into squares :)
-        self.x_scale = (len(self.data)) / self.chunk_size
-        self.y_scale = len(self.data[0]) / self.chunk_size
+        self.x_scale = (len(self.data)) / x_res
+        self.y_scale = len(self.data[0]) / y_res
 
         # initiation of the array in which the reduced map will fit
-        self.reduction = np.zeros((self.chunk_size, self.chunk_size))
+        self.reduction = np.zeros((x_res, y_res))
 
         # takes the 90th percentile light value in the entire map. anything
         # below this number is set to 0. You can change this number if you
         # want, I just set it to something that looked pretty and did good
         # filtering.
-        self.black = np.percentile(self.data, 90)
+        self.black = np.percentile(self.data, sensitivity)
         self.lower_res()
         self.normalize()
 
-    def lower_res(self):
+    def lower_res(self, pixel_sens=90):
         """
         Lowers the resolution of the image.
 
@@ -81,6 +92,14 @@ class Image:
         black value, it gets written into the array. If it happens to be
         smaller, the number that goes in is 0.
 
+        Parameters:
+        ------------
+        pixel_sens : int
+            unlike the other sensitivity option, the higher the number here,
+            the brighter the pixel will probably be set. Takes the percentile of
+            a chunk of data, so the higher the number, the more likely
+            something will show up in the representative pixel, and the
+            higher value it will be.
 
         """
         for x, y in it.product(range(self.chunk_size),
@@ -89,15 +108,19 @@ class Image:
             self.reduction[x, y] = np.percentile(
                 self.data[x * self.x_scale : (x + 1) * self.x_scale,
                           y * self.y_scale: (y + 1) * self.y_scale],
-                90
+                pixel_sens
             )
             if self.reduction[x, y] < self.black:
                 self.reduction[x, y] = 0
 
     def normalize(self):
         """
-        Normalizes the sum of column pixel values to 1.
-        There's really not that much to this one tbh.
+        Normalizes the maximum sum of column pixel values to 1.
+        This takes the sum of all the columns, puts them into a list,
+        picks out the largest sum, then divides the entire 2D array by that
+        maximum such that when you add up all the sinewaves in the sound
+        array, you get a maximum amplitude of 1, something required to write
+        the wav file correctly in a float32 compliant fashion.
         You can change this function to something else if you want like
         logarithmic normalization or something. I don't even know what that
         means yo

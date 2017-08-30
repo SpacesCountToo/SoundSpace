@@ -1,7 +1,6 @@
 import numpy as np
-from img_deconstruct import Image
 import scipy.io.wavfile as sp
-
+import os
 class SoundSpace:
 
     def __init__(self, volume_list, notetime):
@@ -22,7 +21,8 @@ class SoundSpace:
         .notes : list, int
             list of frequencies. You can change this to whatever values you
             want, I have it set to half step intervals from A2 to almost A5 I
-            think
+            think. There are currently 36 notes; if you add more, change
+            y_res in img_deconstruct. I should have a settings file tbh
         .framerate : int
             it's actually the sample rate, default is 44100, but 48000 is like
             studio quality (if you're really worried about harmonics aliasing,
@@ -50,6 +50,21 @@ class SoundSpace:
         self.framect = int(self.framerate*self.notetime)
         self.volumes = volume_list
         self.x_spc = np.linspace(0, 2*np.pi*self.notetime, self.framect)
+
+        # How to interpret sineGenArray:
+        # 1) We'll take all the note frequencies in self.notes.
+        # 2) multiply each note into x_spc to get the list of numbers we'll
+        #    be taking the sine, meaning we have an np.float32 array for one
+        #    frequency in the range 0->2pi*duration. If you graph this,
+        #    it's literally just a straight line with a slope
+        # 3) Take the sine of that array we just made to make the cool
+        #    oscillating graph that you associate with sine.
+        # 4) Rinse/repeat for the remaining 35 notes, and store them all in
+        #    this neat list.
+        # You might be asking "wtf why do i need this", and the answer is
+        # really just repeated processing using the array. Having it stored
+        # in memory is nice, but I suppose you should technically trash it
+        # after you use it.
         self.sineGenArray = [np.sin(note * self.x_spc) for note in self.notes]
         self.mono_sig = self.monoSigGen()
         self.stereo_sig = self.stereoSigGen()
@@ -70,8 +85,11 @@ class SoundSpace:
         """
         tmp = []
 
-        # idk, this is just doing element by element multiplication in array.
+        # This is just doing element-wise multiplication in array.
+        # As an example: np.dot([1, 2, 3, 4], [5, 4, 3, 2]) => [5, 8, 9, 8]
         # They call it dot multiplication in NumPy.
+        # This adjusts the volume appropriately for each frequency in a
+        # column. It does this for all the columns.
         for c_vol in range(len(self.volumes)):
             a1 = np.dot(self.volumes[c_vol], self.sineGenArray)
             # add in the clicks and dings. These are arbitrary, and you can
@@ -82,10 +100,10 @@ class SoundSpace:
             # stereo file, use the template I have for the ding track.
 
             if c_vol % 6 == 0:
-                a2 = sp.read('waves/ding.wav')[1].T[0][0:8503]
+                a2 = sp.read(os.path.join('waves','ding.wav'))[1].T[0][0:8503]
 
             else:
-                a2 = sp.read('waves/click.wav')[1]
+                a2 = sp.read(os.path.join('waves','click.wav'))[1]
             tmp.append(np.concatenate((a2, a1)))
         return tmp
 
@@ -110,10 +128,19 @@ class SoundSpace:
         # Right now, each HRIR is written in signed int16 (-32768 -> 32767),
         # so to convert to np.float32, just map 32768 = 1 by dividing
         # everything by 32768.
-        L_hrtf = [sp.read('hrtf/L0e%03da.wav' % (m % 360))[1]/32768.
-                  for m in range(270, 540, 5)]
-        R_hrtf = [sp.read('hrtf/R0e%03da.wav' % (m % 360))[1]/32768.
-                  for m in range(270, 540, 5)]
+        #
+        # The HRTF/HRIR files I found are found at:
+        # http://sound.media.mit.edu/resources/KEMAR/full.zip
+        # Do note that there are more recent proprietary libraries which
+        # achieve HRTFs more accurately and it sounds really clean,
+        # and also possible is using the .mat files that CIPIC has here:
+        # http://interface.cipic.ucdavis.edu/data/CIPIC_hrtf_database.zip
+        # but you'll need to do a little bit (see: a shitload) of work to
+        # figure out how to use mat files for this and whatnot.
+        L_hrtf = [sp.read(os.path.join('hrtf','L0e%03da.wav' % (m % 360)))[
+                      1] / 32768. for m in range(270, 540, 5)]
+        R_hrtf = [sp.read(os.path.join('hrtf', 'R0e%03da.wav' % (m % 360)))[
+                      1] / 32768. for m in range(270, 540, 5)]
         L_sig = np.empty((0, 0), dtype=np.float32)
         R_sig = np.empty((0, 0), dtype=np.float32)
         for wave in range(len(self.mono_sig)):

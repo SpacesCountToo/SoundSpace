@@ -60,9 +60,9 @@ axes[1].imshow(a.reduction.T, origin='lower', cmap='gist_stern')
 
 print 'Finalizing wav writes and png writes...'
 
-wav.write('%s/fast_%s.wav' % (dire, a.name), 44100, fast.stereo_sig)
-wav.write('%s/slow_%s.wav' % (dire, a.name), 44100, slow.stereo_sig)
-fig.savefig('%s/%s.svg' % (dire, a.name), format='svg', dpi=1200)
+wav.write(os.path.join(dire, 'fast_%s.wav' % a.name), 44100, fast.stereo_sig)
+wav.write(os.path.join(dire, 'slow_%s.wav' % a.name), 44100, slow.stereo_sig)
+fig.savefig(os.path.join(dire, '%s.svg' % a.name), format='svg', dpi=1200)
 
 print 'Done. :)'
 plt.show()
