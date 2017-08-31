@@ -25,7 +25,8 @@ import numpy as np
 import Tkinter as tk            #*
 import tkFileDialog as fd       #*
 import os
-import sys                      #*
+import sys
+import timeit                   #*
 
 #* things with the asterisk mean that it's kinda just extra stuff that you
 # only need for the main file. Matplotlib is extra if you just want the
@@ -45,25 +46,41 @@ import sys                      #*
 
 
 # Image Select
+if len(sys.argv) < 2:
+    root = tk.Tk()
+    root.withdraw()
+    FILEOPENOPTIONS = dict(defaultextension='.fits',
+                           filetypes=[('FITS file','*.fits')])
 
-root = tk.Tk()
-root.withdraw()
-FILEOPENOPTIONS = dict(defaultextension='.fits',
-                       filetypes=[('FITS file','*.fits')])
-print 'Selecting images...'
-filename = fd.askopenfilename(**FILEOPENOPTIONS)
+    print 'Selecting images...'
+    filename = fd.askopenfilename(**FILEOPENOPTIONS)
+else:
+    filename = sys.argv[1]
+print filename
+
 try:
     print 'Done. Opening %s' % filename
 except TypeError:
     sys.exit('No file found, quitting...')
 
 print "Deconstructing Image..."
+start = timeit.default_timer()
+proc_start = start
 a = Image(filename)
+end = timeit.default_timer() - start
+print "reduction make: %0.6f" % end
 print "Done."
 print "Creating fast map..."
+start = timeit.default_timer()
 fast = SoundSpace(a.reduction, 1.0)
+end = timeit.default_timer() - start
+print "fast map make: %0.6f" % end
 print "Creating slow map..."
+start = timeit.default_timer()
 slow = SoundSpace(a.reduction, 3.0)
+end = timeit.default_timer() - start
+print "slow map make: %0.6f" % end
+
 print "Done."
 dire = 'objects/%s' % a.name
 try:
@@ -78,10 +95,21 @@ axes[0].imshow(np.log10(a.data.T), origin='lower', cmap='gist_stern')
 axes[1].imshow(a.reduction.T, origin='lower', cmap='gist_stern')
 
 print 'Finalizing wav writes and png writes...'
-
+start = timeit.default_timer()
 wav.write(os.path.join(dire, 'fast_%s.wav' % a.name), 44100, fast.stereo_sig)
-wav.write(os.path.join(dire, 'slow_%s.wav' % a.name), 44100, slow.stereo_sig)
-fig.savefig(os.path.join(dire, '%s.svg' % a.name), format='svg', dpi=1200)
+end = timeit.default_timer() - start
+print "fast wave save: %0.6f" % end
 
+start = timeit.default_timer()
+wav.write(os.path.join(dire, 'slow_%s.wav' % a.name), 44100, slow.stereo_sig)
+end = timeit.default_timer() - start
+print "slow wave save: %0.6f" % end
+
+start = timeit.default_timer()
+fig.savefig(os.path.join(dire, '%s.svg' % a.name), format='svg', dpi=1200)
+end = timeit.default_timer() - start
+print "figure save: %0.6f" % end
 print 'Done. :)'
+proc_end = timeit.default_timer() - proc_start
+print 'process time: %06f' % proc_end
 plt.show()

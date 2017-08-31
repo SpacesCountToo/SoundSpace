@@ -21,7 +21,7 @@ import scipy.io.wavfile as sp
 import os
 class SoundSpace:
 
-    def __init__(self, volume_list, notetime):
+    def __init__(self, volume_list, notetime, y_res=36, spacing=12):
         """
         Initializes the SoundSpace object.
 
@@ -33,6 +33,11 @@ class SoundSpace:
             Contains a matrix of data relating to pixel intensity
         notetime : float
             Basically the duration of the chord you want played (in seconds)
+        y_res : int
+            How many notes you want sequentially (defaults to 36 notes)
+        spacing : int -> np.float32
+            How far apart you want the notes (defaults to half steps;
+            see comments about common chromatic tunings) (uses A2 = 110 Hz)
 
         (important) Properties:
         ------------
@@ -56,12 +61,22 @@ class SoundSpace:
             all the rows. Makes sense in monoSigGen.
         """
 
-        self.notes = [110., 116.54, 123.47, 130.81, 138.59, 146.83,
-                      155.56, 164.81, 174.61, 185., 196., 207.65,
-                      220., 233.08, 246.94, 261.63, 277.18, 293.66,
-                      311.13, 329.63, 349.23, 369.99, 392., 415.30,
-                      440., 466.16, 493.88, 523.25, 554.37, 587.33,
-                      622.25, 659.25, 698.46, 739.99, 783.99, 830.61]
+        # I got clever and just used the formula for generating half stepped
+        # note frequencies for notes, starting at 110 Hz (A2 or something.)
+        # You can adjust the parameter for how many notes you want
+        # encompassed by the map by setting y_res when calling this object
+        # (defaults to 36).
+        # If you really want to change the tuning spacing, change the spacing
+        # variable to something else.
+        # spacing = 24 -> .25 steps (harder to distinguish unless multiple
+        #                            playing at once)
+        # spacing = 12 -> .5 steps (minor 2nds)
+        # spacing = 6 -> 1.0 steps (major 2nds)
+        # spacing = 4 -> 1.5 steps (minor 3rds)
+        # spacing = 3 -> 2.0 steps (major 3rds)
+        # spacing = 2 -> 2.5 steps (perfect 4ths)
+        self.notes = [110. * (2 ** (n/np.float32(spacing)))
+                      for n in range(y_res)]
 
         self.framerate = 44100
         self.notetime = notetime
