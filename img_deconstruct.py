@@ -86,6 +86,8 @@ class Image:
         # x_scale * y_scale gives you the resolution of one low-res pixel. This
         # method is pretty nice because you actually can use non-square images
         # and turn them into squares :)
+        self.x_res = x_res
+        self.y_res = y_res
         self.x_scale = (len(self.data)) / x_res
         self.y_scale = len(self.data[0]) / y_res
 
@@ -120,8 +122,8 @@ class Image:
             higher value it will be.
 
         """
-        for x, y in it.product(range(self.chunk_size),
-                               range(self.chunk_size)
+        for x, y in it.product(range(self.x_res),
+                               range(self.y_res)
                                ):
             self.reduction[x, y] = np.percentile(
                 self.data[x * self.x_scale : (x + 1) * self.x_scale,
