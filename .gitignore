@@ -6,3 +6,9 @@ archive/
 objects/
 pix/
 .idea/
+
+# Dont include python virtual environment in git repo
+venv/
+
+# Dont include output files in git repo
+objects/

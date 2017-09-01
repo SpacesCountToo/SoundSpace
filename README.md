@@ -23,6 +23,24 @@ If you don't have the libraries, you can use Pip to install, or just google
 Just download the zip file, then run main.py in python(for now: will try to add 
 some cool installer maybe?)
 
+### How to Install and Run using virtualenv
+
+1. Install virtualenv if not already installed
+    $ pip install virtualenv
+
+2. Create virtual environment in venv directory
+    $ virtualenv venv
+
+3. Activate the virtual environment
+    $ source venv/bin/activate
+
+4. Install all the requirements in the virtual environment
+    $ pip install -r requirements.txt
+
+5. Start the program
+    $ venv/bin/python main.py
+
+
 ## Contributing
 I don't actually know how this works. If you want to contribute, hit me with 
 a pull request or something. I check my email about 3 times a month  if I'm 
