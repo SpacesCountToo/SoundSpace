@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="Commit 4.3: Bug fixes; updated for more *robust* objects">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="e945e103-6a56-41c1-ae21-598fad146d16" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -70,8 +66,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="222">
-                <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+              <first_editor relative-caret-position="768">
+                <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -498,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504219382546</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit 4.4.1: Fixed up the README, added Contributor's Covenant">
+      <created>1504305293969</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1504305293969</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -537,7 +540,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit 4.3: Bug fixes; updated for more *robust* objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 4.3: Bug fixes; updated for more *robust* objects" />
+    <MESSAGE value="Commit 4.4.1: Fixed up the README, added Contributor's Covenant" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 4.4.1: Fixed up the README, added Contributor's Covenant" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -851,8 +855,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="222">
-            <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+          <first_editor relative-caret-position="768">
+            <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
             <folding />
           </first_editor>
           <second_editor />

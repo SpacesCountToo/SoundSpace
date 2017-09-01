@@ -48,7 +48,7 @@ some cool installer maybe?)
 
 ## Contributing
 If you're interested in contributing, submit a pull request! Don't forget to 
-abide by the typical[contributor guidelines](https://github.com/rdawis/SoundSpace/blob/master/CONTRIBUTING.md)
+abide by the typical [contributor guidelines](https://github.com/rdawis/SoundSpace/blob/master/CONTRIBUTING.md)
 otherwise I'll be sad :(
 
 ## License
