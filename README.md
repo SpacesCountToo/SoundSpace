@@ -26,31 +26,39 @@ some cool installer maybe?)
 ### How to Install and Run using virtualenv
 
 1. Install virtualenv if not already installed
-    $ pip install virtualenv
+    
+    `$ pip install virtualenv`
 
 2. Create virtual environment in venv directory
-    $ virtualenv venv
+    
+    `$ virtualenv venv`
 
 3. Activate the virtual environment
-    $ source venv/bin/activate
+    
+    `$ source venv/bin/activate`
 
 4. Install all the requirements in the virtual environment
-    $ pip install -r requirements.txt
+    
+    `$ pip install -r requirements.txt`
 
 5. Start the program
-    $ venv/bin/python main.py
+    
+    `$ venv/bin/python main.py`
 
 
 ## Contributing
-I don't actually know how this works. If you want to contribute, hit me with 
-a pull request or something. I check my email about 3 times a month  if I'm 
-honest.
+If you're interested in contributing, submit a pull request! Don't forget to 
+abide by the typical[contributor guidelines](https://github.com/rdawis/SoundSpace/blob/master/CONTRIBUTING.md)
+otherwise I'll be sad :(
 
 ## License
-This program is licensed under the GNU GPL license. See LICENSE.md for more 
-information.
+This program is licensed under the GNU GPL license. See [LICENSE.md](https://github.com/rdawis/SoundSpace/blob/master/LICENSE.md) 
+for more information.
 
 ## Authors
 **Raphael Dawis** - *Initial work* - [rdawis](https://github.com/rdawis)
 
-I'll add contributors as they begin contributing (somehow).
+**Chris Venteicher** - *Virtual Environment stuff* - [cventeic](https://github.com/cventeic)
+
+Other contributors can be found [here](https://github.com/rdawis/SoundSpace/contributors)
+
