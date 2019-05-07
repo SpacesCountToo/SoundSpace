@@ -1,5 +1,5 @@
 """
-Copyright (C) 2017 Raphael Dawis
+Copyright (C) 2017 Raquel Dawis
 
 This file is part of SoundSpace.
 
