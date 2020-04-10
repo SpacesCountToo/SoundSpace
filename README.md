@@ -56,7 +56,7 @@ This program is licensed under the GNU GPL license. See [LICENSE.md](https://git
 for more information.
 
 ## Authors
-**Raphael Dawis** - *Initial work* - [rdawis](https://github.com/rdawis)
+**Raquel Dawis** - *Initial work* - [rdawis](https://github.com/rdawis)
 
 **Chris Venteicher** - *Virtual Environment stuff* - [cventeic](https://github.com/cventeic)
 
